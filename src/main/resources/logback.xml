@@ -13,7 +13,7 @@
     converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
   <!-- 彩色日志格式 -->
   <property name="LOG_PATTERN"
-    value="${CONSOLE_LOG_PATTERN:-%d{yyyy-MM-dd'T'HH:mm:ss.SSS'+0800'} [${LOG_LEVEL_PATTERN:-%p}] ${PROJECT_GROUP}/${PROJECT_NAME} %-40.40logger{39} ${PID:- } [%15.15t] %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+    value="[%d{MM-dd HH:mm:ss SSS} %-5level] [traceId:%X{traceId}] %-40.40logger{39} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
   <!-- Console 输出设置 -->
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
@@ -28,7 +28,7 @@
       <!--日志文件输出的文件名-->
       <FileNamePattern>${LOG_HOME}/${PROJECT_NAME}.%d{yyyy-MM-dd}.log</FileNamePattern>
       <!--日志文件保留天数-->
-      <MaxHistory>90</MaxHistory>
+      <MaxHistory>5</MaxHistory>
     </rollingPolicy>
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
       <pattern>${LOG_PATTERN}</pattern>

@@ -1,6 +1,9 @@
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.rickiyang.demo.entity
+  configLocation: classpath:mybatis-config.xml
+  #启动类中使用了mapperScan注解，这里就不用了，否则需要
+  #mapperScanPackage: com.rickiyang.demo.dao
 
 server:
   port: 9955
