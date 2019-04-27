@@ -1,0 +1,51 @@
+mybatis:
+  configLocation: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*/*Mapper.xml
+
+server:
+  port: 9955
+
+spring:
+  datasource:
+    druid:
+      master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&&serverTimezone=Asia/Shanghai
+        username: root
+        password: 123456
+        initialSize: 5
+        minIdle: 5
+        maxActive: 30
+      slave:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/test-v1?useUnicode=true&characterEncoding=utf-8&useSSL=false&&serverTimezone=Asia/Shanghai
+        username: root
+        password: 123456
+        initialSize: 5
+        minIdle: 5
+        maxActive: 30
+  aop:
+    auto: true
+    proxy-target-class: true
+  redis:
+    database: 0
+    host: 10.11.23.14
+    port: 6379
+    timeout: 10000
+  application:
+    name: mult-database2
+  profiles:
+    active: dev
+    default: dev
+  main:
+    allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册 DataSourceTypeManager重复
+
+# LOGGING
+logging:
+  #config: classpath:logback.xml.bak
+
+email:
+  sender:
+    host: smtp.dns.qq.com
+    account: aaa@qq.com
+    password: 123456

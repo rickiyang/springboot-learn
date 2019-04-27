@@ -1,0 +1,38 @@
+server:
+  port: 9955
+
+spring:
+  datasource:
+    db1:
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    db2:
+      url: jdbc:mysql://localhost:3306/test-v1?useUnicode=true&characterEncoding=utf-8&useSSL=false&&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  aop:
+    auto: true
+    proxy-target-class: true
+  redis:
+    database: 0
+    host: 10.11.23.14
+    port: 6379
+    timeout: 10000
+  application:
+    name: mult-database2
+  profiles:
+    active: prod
+    default: prod
+
+# LOGGING
+logging:
+  config: classpath:logback.xml.bak
+
+email:
+  sender:
+    host: smtp.dns.qq.com
+    account: aaa@qq.com
+    password: 123456

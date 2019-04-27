@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  aop:
+    auto: true
+    proxy-target-class: true
+  redis:
+    host: 10.11.23.14
+    port: 10037
+    database: 0
+    password:
+    timeout: 1000
+  application:
+    name: single-database
+  profiles:
+    active: dev
+    default: dev
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.rickiyang.learn.entity
+  configLocation: classpath:mybatis-config.xml
+
+
+
+server:
+  port: 9955
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /
