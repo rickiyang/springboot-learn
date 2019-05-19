@@ -31,6 +31,20 @@ server:
   port: 9955
 
 
+dubbo:
+  application:
+    name: test
+    owner: adUser
+    zkAddress: 127.0.0.1:2181
+    dubboPort: 20889
+    providerConnections: 0
+    providerThreads: 50
+    providerAccepts: 500
+
+dubboConsumer:
+  application:
+    zkAddress: 127.0.0.1:2181
+
 management:
   endpoints:
     web:
