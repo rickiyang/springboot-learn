@@ -13,42 +13,20 @@ spring:
     database: 0
     password:
     timeout: 1000
-  data:
-    elasticsearch:
-      repositories:
-        enabled: true
-      cluster-nodes: 192.168.238.128:9300
   application:
-    name: single-database
+    name: elasticSearch
   profiles:
-    active: dev
-    default: dev
-
+    active: prod
+    default: prod
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   typeAliasesPackage: com.rickiyang.learn.entity
-  configLocation: classpath:mybatis-config.xml
-
-
+  mapperScanPackage: com.rickiyang.learn.dao
 
 server:
   port: 9955
 
-
-dubbo:
-  application:
-    name: test
-    owner: adUser
-    zkAddress: 127.0.0.1:2181
-    dubboPort: 20889
-    providerConnections: 0
-    providerThreads: 50
-    providerAccepts: 500
-
-dubboConsumer:
-  application:
-    zkAddress: 127.0.0.1:2181
 
 management:
   endpoints:

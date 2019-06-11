@@ -13,16 +13,11 @@ spring:
     database: 0
     password:
     timeout: 1000
-  data:
-    elasticsearch:
-      repositories:
-        enabled: true
-      cluster-nodes: 192.168.238.128:9300
   application:
-    name: single-database
+    name: elasticSearch
   profiles:
-    active: dev
-    default: dev
+    active: beta
+    default: beta
 
 
 mybatis:
@@ -35,20 +30,6 @@ mybatis:
 server:
   port: 9955
 
-
-dubbo:
-  application:
-    name: test
-    owner: adUser
-    zkAddress: 127.0.0.1:2181
-    dubboPort: 20889
-    providerConnections: 0
-    providerThreads: 50
-    providerAccepts: 500
-
-dubboConsumer:
-  application:
-    zkAddress: 127.0.0.1:2181
 
 management:
   endpoints:

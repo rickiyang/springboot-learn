@@ -6,7 +6,10 @@
     <groupId>com.rickiyang.learn</groupId>
     <artifactId>springboot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>elasticSearch</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>springboot-learn</name>
     <description>Demo project for Spring Boot</description>
