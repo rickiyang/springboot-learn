@@ -1,4 +1,4 @@
-package com.rickiyang.learn.es;
+package com.rickiyang.learn.cache;
 
 import lombok.extern.log4j.Log4j2;
 import org.apache.http.HttpHost;

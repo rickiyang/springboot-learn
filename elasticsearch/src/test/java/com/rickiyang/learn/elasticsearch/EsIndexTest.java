@@ -1,7 +1,7 @@
 package com.rickiyang.learn.elasticsearch;
 
 import com.alibaba.fastjson.JSONObject;
-import com.rickiyang.learn.es.EsDao;
+import com.rickiyang.learn.cache.EsDao;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;

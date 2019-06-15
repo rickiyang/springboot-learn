@@ -1,4 +1,4 @@
-package com.rickiyang.learn.es;
+package com.rickiyang.learn.cache;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.log4j.Log4j2;
