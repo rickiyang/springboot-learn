@@ -1,0 +1,17 @@
+package com.rickiyang.learn.service.disruptor;
+
+import com.lmax.disruptor.EventFactory;
+
+/**
+ * @author rickiyang
+ * @date 2019-06-27
+ * @Desc
+ */
+// 需要让disruptor为我们创建事件，我们同时还声明了一个EventFactory来实例化Event对象。
+public class LongEventFactory implements EventFactory {
+
+    @Override
+    public Object newInstance() {
+        return new LongEvent();
+    }
+}
