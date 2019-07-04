@@ -1,5 +1,6 @@
-package com.rickiyang.learn.cache;
+package com.rickiyang.learn.config;
 
+import com.google.common.collect.Lists;
 import lombok.extern.log4j.Log4j2;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 
 /**
@@ -35,6 +38,7 @@ public class ESConfiguration implements FactoryBean<RestHighLevelClient>, Initia
     public RestHighLevelClient getObject() throws Exception {
         return restHighLevelClient;
     }
+
     /**
      * 获取接口返回的实例的class
      *
@@ -56,6 +60,7 @@ public class ESConfiguration implements FactoryBean<RestHighLevelClient>, Initia
         }
     }
 
+    @Override
     public boolean isSingleton() {
         return false;
     }
@@ -67,7 +72,15 @@ public class ESConfiguration implements FactoryBean<RestHighLevelClient>, Initia
 
     private RestHighLevelClient buildClient() {
         try {
-            restHighLevelClient = new RestHighLevelClient(RestClient.builder(new HttpHost(clusterNodes.split(":")[0], Integer.parseInt(clusterNodes.split(":")[1]), "http")));
+            List<String> hostList = Lists.newArrayList(clusterNodes.split(","));
+            HttpHost[] httpHosts = new HttpHost[hostList.size()];
+            for (int i = 0; i < hostList.size(); i++) {
+                String hostStr = hostList.get(i);
+                String[] split = hostStr.split(":");
+                HttpHost httpHost = new HttpHost(split[0], Integer.valueOf(split[1]), "http");
+                httpHosts[i] = httpHost;
+            }
+            restHighLevelClient = new RestHighLevelClient(RestClient.builder(httpHosts));
         } catch (Exception e) {
             log.error(e.getMessage());
         }
