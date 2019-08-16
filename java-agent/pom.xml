@@ -54,7 +54,7 @@
                         </manifest>
                         <manifestEntries>
                             <Premain-Class>com.rickiyang.learn.AgentTest</Premain-Class>
-                            <Agent-Class>com.rickiyang.learn.AgentTest</Agent-Class>
+                            <Agent-Class>com.rickiyang.learn.AgentMainTest</Agent-Class>
                             <Can-Redefine-Classes>true</Can-Redefine-Classes>
                             <Can-Retransform-Classes>true</Can-Retransform-Classes>
                         </manifestEntries>
