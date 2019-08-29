@@ -7,7 +7,13 @@
     <artifactId>springboot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
+        <module>elastic-job</module>
         <module>elasticSearch</module>
+        <module>java-agent</module>
+        <module>multdatabase2</module>
+        <module>mult-database</module>
+        <module>single-database</module>
+
     </modules>
     <packaging>pom</packaging>
 
