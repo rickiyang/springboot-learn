@@ -1,11 +1,11 @@
 package com.rickiyang.learn.service.freemarker;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.rickiyang.learn.model.StatisticsEmailPO;
 import freemarker.template.Template;
 import org.apache.commons.compress.utils.Lists;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 

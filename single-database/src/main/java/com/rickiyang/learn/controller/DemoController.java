@@ -40,6 +40,8 @@ public class DemoController {
             user = userService.queryUserById(id);
             log.info("我是一条测试日志");
         } catch (Exception e) {
+            User fff = User.builder().sex(1).name("fff").build();
+            log.info("我是一条测试日志,user={}",fff);
             return BaseResponse.fail(CodeEnum.SYSTEM_ERROR);
         }
         return BaseResponse.success(JSON.toJSONString(user));
